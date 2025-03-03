@@ -48,7 +48,6 @@ After identifying different clusters of correlatioin maps, the SST monitoring re
 - **Implementation**: `kohonen` R package (v3.0.12)
 - **Hyperparameters**:  
   - Grid: 2×2 hexagonal topology
-  - 
 ## Intended Use
 - **Purpose**: Cluster correlation maps between SSTA and malaria anomalies.  
 - **Domain**: Climate-health modeling in tropical regions.  
