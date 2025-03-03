@@ -41,3 +41,27 @@ Applies Self-Organizing Maps to cluster correlation maps into different groups.
 
 After identifying different clusters of correlatioin maps, the SST monitoring regions are defined as the largest continuous regions with high Malaria-SST correlation. As a result, a dynamic SST index is identified as the remote predictor for malaria. The “dynamic” implies the SST monitoring regions change among different SOM clusters. When applying to other vector-borne diseases, the temporal continuity should also be checked before identifying the SST monitoring regions.
 
+# Model Card for Self-Organizing Map (SOM)
+
+## Model Details
+- **Algorithm**: Self-Organizing Map (Kohonen network)
+- **Implementation**: `kohonen` R package (v3.0.12)
+- **Hyperparameters**:  
+  - Grid: 2×2 hexagonal topology
+  - 
+## Intended Use
+- **Purpose**: Cluster correlation maps between SSTA and malaria anomalies.  
+- **Domain**: Climate-health modeling in tropical regions.  
+
+## Training Data
+- **Input**: 2756 correlation maps (flattened to 1D vectors).  
+- **Preprocessing**: Min-max normalized to [0, 1].  
+- **Source**: Processed SSTA and malaria data (Loreto, Peru).  
+
+## Limitations
+- Sensitivity to grid size; tested configurations (1×3, 2×2, 1×5).  
+- Assumes stationarity in SSTA-malaria relationships.  
+
+## Ethical Considerations
+- **Data Bias**: Malaria incidence data may underrepresent remote areas.  
+- **Generalizability**: Validated for Loreto; applicability to other regions untested.  
