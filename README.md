@@ -29,7 +29,7 @@ for example, in our study 2756 correlation maps are generated. we group them tog
 Multiple correlation maps can be combined into a `correlation_map_total` array for subsequent clustering analysis.
 correlation maps with longitude and latitude need to be flattened into one dimension (the grids dimension in SOM_function)
 
-# 2. SOM_function (R)
+# 2. Self-organzing map function (R)
 Applies Self-Organizing Maps to cluster correlation maps into different groups.
 
 **Input:**
@@ -38,3 +38,6 @@ Applies Self-Organizing Maps to cluster correlation maps into different groups.
 
 **Output:**
 - SOM results array (correlation maps × clusters)
+
+After identifying different clusters of correlatioin maps, the SST monitoring regions are defined as the largest continuous regions with high Malaria-SST correlation. As a result, a dynamic SST index is identified as the remote predictor for malaria. The “dynamic” implies the SST monitoring regions change among different SOM clusters. When applying to other vector-borne diseases, the temporal continuity should also be checked before identifying the SST monitoring regions.
+
