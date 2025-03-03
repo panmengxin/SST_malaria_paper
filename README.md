@@ -3,7 +3,7 @@ The source code and exampled datasets for the paper entitled "Beyond ENSO: Harne
 
 We provides two main functions for analyzing relationships between sea surface temperature anomalies (SSTA) and disease incidence, and identify the dynamic SST index:
 
-**1. the dataset we provide:**
+# 1. the dataset we provide:**
 - SSTA field data: the sea surface temperature anomaly fields in 1st epiweek of 1999 to 17th epiweek of 2023
     #For each grid, the SST anomaly (SSTA) is calculated by subtracting the seasonally varying climatology from the raw SST value to remove the seasonal cycle. 
     #To match the period of the malaria dataset, we reorganized the daily SSTA field into each epidemiological week. 
@@ -16,6 +16,10 @@ Note: To improve the correlation robustness, we concatenate the data for every f
 
 # 2. correlation_map_function (python)
 Generates correlation maps between SSTA fields and disease incidence (e.g., malaria) anomaly time series.
+
+**Input:**
+- SSTA field data
+- Disease incidence anomaly time series
 
 **Output:**
 - Correlation map array containing r-values, p-values, slopes, and intercepts
