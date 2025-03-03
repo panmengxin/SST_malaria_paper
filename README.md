@@ -5,12 +5,12 @@ We provides two main functions for analyzing relationships between sea surface t
 
 # 1. the dataset we provide:**
 - SSTA field data: the sea surface temperature anomaly fields in 1st epiweek of 1999 to 17th epiweek of 2023
-    #For each grid, the SST anomaly (SSTA) is calculated by subtracting the seasonally varying climatology from the raw SST value to remove the seasonal cycle. 
-    #To match the period of the malaria dataset, we reorganized the daily SSTA field into each epidemiological week. 
-    #For each grid, the linear trend of the SSTA in each calendar epidemiological week is removed. 
+    - For each grid, the SST anomaly (SSTA) is calculated by subtracting the seasonally varying climatology from the raw SST value to remove the seasonal cycle. 
+    - To match the period of the malaria dataset, we reorganized the daily SSTA field into each epidemiological week. 
+    - For each grid, the linear trend of the SSTA in each calendar epidemiological week is removed. 
 - Disease incidence anomaly time series: malaria anomaly time series over entire loreto region during 1st epiweek of 2000 to 14th epiweek of 2023 (the up-to-date malaria data we have)
-    #the malaria anomaly is used, as we focus on the year-to-year variation. It is calculated by subtracting the malaria annual cycle 
-    #(i.e., mean malaria incidence in each calendar epidemiological week during 2000-2022) from the total malaria incidence.
+    - the malaria anomaly is used, as we focus on the year-to-year variation. It is calculated by subtracting the malaria annual cycle 
+    - (i.e., mean malaria incidence in each calendar epidemiological week during 2000-2022) from the total malaria incidence.
 
 Note: To improve the correlation robustness, we concatenate the data for every four epidemiological weeks in the correlation analysis, so you can see the "add" dimension in both SST and Malaria data. It concatenates the data in four sequencial epiweeks. 
 
