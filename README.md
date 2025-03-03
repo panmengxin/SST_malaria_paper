@@ -1,12 +1,9 @@
 # SST_malaria_paper
 The source code and exampled datasets for the paper entitled "Beyond ENSO: Harnessing Tropical Ocean Variability in Long-lead Vector-borne Disease Prediction by Pan et al."
 
-We provides two main functions for analyzing relationships between sea surface temperature anomalies (SSTA) and disease incidence:
+We provides two main functions for analyzing relationships between sea surface temperature anomalies (SSTA) and disease incidence, and identify the dynamic SST index:
 
-# 1. correlation_map_function
-Generates correlation maps between SSTA fields and disease incidence (e.g., malaria) anomaly time series.
-
-**the dataset we provide:**
+**1. the dataset we provide:**
 - SSTA field data: the sea surface temperature anomaly fields in 1st epiweek of 1999 to 17th epiweek of 2023
     #For each grid, the SST anomaly (SSTA) is calculated by subtracting the seasonally varying climatology from the raw SST value to remove the seasonal cycle. 
     #To match the period of the malaria dataset, we reorganized the daily SSTA field into each epidemiological week. 
@@ -17,6 +14,9 @@ Generates correlation maps between SSTA fields and disease incidence (e.g., mala
 
 Note: To improve the correlation robustness, we concatenate the data for every four epidemiological weeks in the correlation analysis, so you can see the "add" dimension in both SST and Malaria data. It concatenates the data in four sequencial epiweeks. 
 
+# 2. correlation_map_function (python)
+Generates correlation maps between SSTA fields and disease incidence (e.g., malaria) anomaly time series.
+
 **Output:**
 - Correlation map array containing r-values, p-values, slopes, and intercepts
 
@@ -25,7 +25,7 @@ for example, in our study 2756 correlation maps are generated. we group them tog
 Multiple correlation maps can be combined into a `correlation_map_total` array for subsequent clustering analysis.
 correlation maps with longitude and latitude need to be flattened into one dimension (the grids dimension in SOM_function)
 
-# 2. SOM_function
+# 2. SOM_function (R)
 Applies Self-Organizing Maps to cluster correlation maps into different groups.
 
 **Input:**
