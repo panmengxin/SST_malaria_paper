@@ -1,5 +1,5 @@
 # SST_malaria_paper
-The source code and exampled datasets for the paper entitled "Beyond ENSO: Harnessing Tropical Ocean Variability in Long-lead Vector-borne Disease Prediction" by Pan et al.
+The source code and exampled datasets for the under-reviewed paper entitled "Beyond ENSO: Harnessing Tropical Ocean Variability in Long-lead Vector-borne Disease Prediction" by Pan et al.
 
 We provides two main functions for analyzing relationships between sea surface temperature anomalies (SSTA) and disease incidence, and identify the dynamic SST index:
 
