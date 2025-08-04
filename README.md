@@ -1,5 +1,5 @@
 # SST_malaria_paper
-The source code and exampled datasets for the under review paper entitled "Beyond ENSO: Harnessing Tropical Ocean Variability in Long-lead Vector-borne Disease Prediction" by Pan et al.
+The source code and exampled datasets for paper entitled "A Machine Learning-based Dynamic SST Index for Long-lead Malaria Prediction in the Peruvian Amazon" by Pan et al in GeoHealth.
 
 We provides two main functions for analyzing relationships between sea surface temperature anomalies (SSTA) and disease incidence, and identify the dynamic SST index:
 
