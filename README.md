@@ -1,20 +1,20 @@
 # SST_malaria_paper
 The source code and exampled datasets for paper entitled "A Machine Learning-based Dynamic SST Index for Long-lead Malaria Prediction in the Peruvian Amazon" by Pan et al in GeoHealth.
 
-We provides two main functions for analyzing relationships between sea surface temperature anomalies (SSTA) and disease incidence, and identify the dynamic SST index:
+We provides the main functions for analyzing relationships between sea surface temperature anomalies (SSTA) and disease incidence, and identify the dynamic SST index:
 
-# 1. Dataset
-- SSTA field data: the sea surface temperature anomaly fields in 1st epiweek of 1999 to 17th epiweek of 2023
+# 0. Dataset
+- SSTA field data: the sea surface temperature anomaly fields in first epiweek of 1999 to last epiweek of 2022
     - For each grid, the SST anomaly (SSTA) is calculated by subtracting the seasonally varying climatology from the raw SST value to remove the seasonal cycle. 
     - To match the period of the malaria dataset, we reorganized the daily SSTA field into each epidemiological week. 
     - For each grid, the linear trend of the SSTA in each calendar epidemiological week is removed. 
-- Disease incidence anomaly time series: malaria anomaly time series over entire loreto region during 1st epiweek of 2000 to 14th epiweek of 2023 (the up-to-date malaria data we have)
-    - the malaria anomaly is used, as we focus on the year-to-year variation. It is calculated by subtracting the malaria annual cycle 
+- Disease incidence anomaly time series: malaria anomaly time series over entire Loreto region during 1st epiweek of 2000 to last epiweek of 2022.
+    - The malaria anomaly is used, as we focus on the year-to-year variation. It is calculated by subtracting the malaria annual cycle 
     - (i.e., mean malaria incidence in each calendar epidemiological week during 2000-2022) from the total malaria incidence.
 
 Note: To improve the correlation robustness, we concatenate the data for every four epidemiological weeks in the correlation analysis, so you can see the "add" dimension in both SST and Malaria data. It concatenates the data in four sequencial epiweeks. 
 
-# 2. Correlation_map_function (python)
+# Step 1. Correlation_map_function (python)
 Generates correlation maps between SSTA fields and disease incidence (e.g., malaria) anomaly time series.
 
 **Input:**
@@ -29,7 +29,7 @@ for example, in our study 2756 correlation maps are generated. we group them tog
 Multiple correlation maps can be combined into a `correlation_map_total` array for subsequent clustering analysis.
 correlation maps with longitude and latitude need to be flattened into one dimension (the grids dimension in SOM_function)
 
-# 2. Self-organzing map function (R)
+# Step 2. Self-organzing map function (R)
 Applies Self-Organizing Maps to cluster correlation maps into different groups.
 
 **Input:**
@@ -63,4 +63,13 @@ After identifying different clusters of correlatioin maps, the SST monitoring re
 
 ## Ethical Considerations
 - **Data Bias**: Malaria incidence data may underrepresent remote areas.  
-- **Generalizability**: Validated for Loreto; applicability to other regions untested.  
+- **Generalizability**: Validated for Loreto; applicability to other regions untested.
+
+# Step 3: Dynamic SST index identification
+- To select the high correlation region over tropical ocean as the SST monitoring regions for each cluster.
+Dynamic SST index is the average SST anomaly over the monitoring regions. 
+
+# Final Step: Prediction performance assessment by generalized linear model (GLM). 
+
+
+
