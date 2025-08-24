@@ -41,8 +41,6 @@ Applies Self-Organizing Maps to cluster correlation maps into different groups.
 
 After identifying different clusters of correlatioin maps, the SST monitoring regions are defined as the largest continuous regions with high Malaria-SST correlation. As a result, a dynamic SST index is identified as the remote predictor for malaria. The “dynamic” implies the SST monitoring regions change among different SOM clusters. When applying to other vector-borne diseases, the temporal continuity should also be checked before identifying the SST monitoring regions.
 
-# Model Card for Self-Organizing Map (SOM)
-
 ## Model Details
 - **Algorithm**: Self-Organizing Map (Kohonen network)
 - **Implementation**: `kohonen` R package (v3.0.12)
@@ -66,10 +64,13 @@ After identifying different clusters of correlatioin maps, the SST monitoring re
 - **Generalizability**: Validated for Loreto; applicability to other regions untested.
 
 # Step 3: Dynamic SST index identification
-- To select the high correlation region over tropical ocean as the SST monitoring regions for each cluster.
-Dynamic SST index is the average SST anomaly over the monitoring regions. 
+- We select a constant SST monitoring region for pairs in a cluster to define the SST index and allow this region to vary across clusters.
+- We define each SST monitoring region as the largest continuous region with high Malaria-SST correlation (i.e., the mean absolute value of correlation greater than 0.25 in the averaged correlation map in each cluster). 
 
 # Final Step: Prediction performance assessment by generalized linear model (GLM). 
+- To assess the predictability provided by the dynamic SST index in long-lead malaria prediction, we apply a generalized linear model (GLM) with a negative-binomial response.
+- To prevent overfitting, we perform bootstrap cross‑validation: in each of 10,000 iterations, we randomly select 80 % of years for training (recomputing GLM coefficients) and test on the remaining 20 %. <img width="468" height="49" alt="image" src="https://github.com/user-attachments/assets/60d5aafe-055a-469d-a2be-ffb0f1c6f42c" />
+
 
 
 
