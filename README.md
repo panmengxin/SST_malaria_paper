@@ -69,7 +69,7 @@ After identifying different clusters of correlatioin maps, the SST monitoring re
 
 # Final Step: Prediction performance assessment by generalized linear model (GLM). 
 - To assess the predictability provided by the dynamic SST index in long-lead malaria prediction, we apply a generalized linear model (GLM) with a negative-binomial response.
-- To prevent overfitting, we perform bootstrap cross‑validation: in each of 10,000 iterations, we randomly select 80 % of years for training (recomputing GLM coefficients) and test on the remaining 20 %. <img width="468" height="49" alt="image" src="https://github.com/user-attachments/assets/60d5aafe-055a-469d-a2be-ffb0f1c6f42c" />
+- To prevent overfitting, we perform bootstrap cross‑validation: in each of 10,000 iterations, we randomly select 80 % of years for training (recomputing GLM coefficients) and test on the remaining 20 %.
 
 
 
