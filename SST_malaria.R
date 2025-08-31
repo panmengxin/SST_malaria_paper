@@ -14,13 +14,14 @@ library(ncdf4)
 library(stats)
 
 # workdir <- "path of the datasets"
-workdir <-"/Users/mengxinpan/Dropbox/Malaria_project/code/"
+
+workdir <-"/home/mengxinp/projects/def-mengxinp/mengxinp/Malaria/open_source_code/"
 num_rows_list <- c(3,2,5,3,7)
 num_columns_list <- c(1,2,1,2,1)
 
 repeat_num=5 # you can repeat the algorithm several times to test the robustness of the result
 
-correlation_map_pool_name <- "correlation_map_SSTA_vs_malaria_anomaly_eachepiweek_2degree_lead_0to52_week_reorganized_forSOM_Rmorethan02"
+correlation_map_pool_name <- "correlation_map_SSTA_vs_malaria_anomaly_eachepiweek_lead_0to52_week_reorganized_forSOM_Rmorethan02"
 ncfname <- paste(correlation_map_pool_name, ".nc", sep = "")
 ncin <- open.nc(paste(workdir,"/",ncfname, sep = ""))
 print.nc(ncin)
@@ -56,7 +57,7 @@ dim.def.nc(nc_cluster_list, "epiweek_leadtime", dim(correlation_map_pool_total)[
 dim.def.nc(nc_cluster_list, "num_cluster", length(num_rows_list))
 dim.def.nc(nc_cluster_list, "seed", repeat_num)
 
-##  Create three variables, one as coordinate variable
+##  Create three variables, one as a coordinate variable
 
 var.def.nc(nc_cluster_list, "epiweek_leadtime", "NC_INT", "epiweek_leadtime")
 var.def.nc(nc_cluster_list, "num_cluster", "NC_DOUBLE","num_cluster")
